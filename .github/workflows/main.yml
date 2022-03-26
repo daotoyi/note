@@ -1,4 +1,4 @@
-name: [CI] Deploy GitHub Pages
+name: CI - Deploy GitHub Pages
 
 # 在main分支发生push事件时触发。
 on: 
