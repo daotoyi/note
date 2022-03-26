@@ -30,8 +30,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           text: '阅读',
           link: '/read/',
           items: [
-              { text: '时间管理', link: '' },
-              { text: '李笑来', link: '/pages/51afd6/' },
+              { text: '自我管理', link: '/pages/9931f7/' },
+              { text: '李笑来', link: '/pages/3cfee2/' },
           ],
       },
       {
