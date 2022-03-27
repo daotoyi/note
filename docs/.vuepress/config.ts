@@ -43,6 +43,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
             { text: '期权', link: '/pages/16f920/' },
             { text: '量化', link: '/' },
             { text: '区块', link: '/pages/832bd7/' },
+            { text: '认知', link: '/pages/660ab0/' },
             { text: '收藏', link: '/pages/02697b/' },
         ],
       },
@@ -161,7 +162,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-        avatar: 'https://raw.githubusercontent.com/daotoyi/picsbed/main//img/202203240031162.png',
+        // avatar: 'https://raw.githubusercontent.com/daotoyi/picsbed/main//img/202203240031162.png',
+        avatar: '/img/avatar.png',
       name: 'daotoyi',
       slogan: '静水流深',
     },
