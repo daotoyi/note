@@ -6,33 +6,41 @@ on:
     branches:
       - main
 
-jobs: # 工作流
+jobs: 
   build:
     runs-on: ubuntu-latest #运行在虚拟机环境ubuntu-latest
+
+  # jobDeploy: # job1      
 
     # strategy:
     #   matrix:
     #     node-version: [10.x]
 
     steps: 
-      - name: Checkout # 步骤1
-        uses: actions/checkout@v2 # 使用的动作。格式：userName/repoName。作用：检出仓库，获取源码。 官方actions库：https://github.com/actions
+      - name: Checkout 
+        uses: actions/checkout@v2 # 使用的动作。作用：检出仓库，获取源码。
+        # 格式：userName/repoName。 官方actions库：https://github.com/actions
         with:
           persist-credentials: false
 
-      # - name: Use Node.js ${{ matrix.node-version }} # 步骤2
-      #   uses: actions/setup-node@v2 # 作用：安装nodejs
-      #   with:
-      #     node-version: ${{ matrix.node-version }} # 版本
+          # - name: Use Node.js ${{ matrix.node-version }} # 步骤2
+          #   uses: actions/setup-node@v2 # 作用：安装nodejs
+          #   with:
+          #     node-version: ${{ matrix.node-version }} # 版本
 
       - name: Generate static file
-        # run: npm install && npm run docs:build
         run: npm install && npm run build
-          
+      
       - name: Deploy on Github
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           REPOSITORY_NAME: daotoyi/site
-          BRANCH: gh-pages # 部署到 gh-pages 分支，因为 main 分支存放的一般是源码，而 gh-pages 分支则用来存放生成的静态文件
+          BRANCH: gh-pages # 部署到 gh-pages 分支
           FOLDER: docs/.vuepress/dist 
+
+      - name: Push Baidu Links
+        run: npm run baiduPush #（注意，运行目录是仓库根目录）
+
+  # jobPushBaidu:
+  #   needs: jobDeploy

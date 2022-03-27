@@ -42,7 +42,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
             { text: '期货', link: '/' },
             { text: '期权', link: '/pages/16f920/' },
             { text: '量化', link: '/' },
-            { text: '比特', link: '/pages/832bd7/' },
+            { text: '区块', link: '/pages/832bd7/' },
             { text: '收藏', link: '/pages/02697b/' },
         ],
       },
