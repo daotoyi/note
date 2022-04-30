@@ -48,44 +48,55 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         ],
       },
       {
-        text: '技术',
-        link: '/technology/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
+        text: '编程',
+        link: '/code/',
         items: [
           // 说明：以下所有link的值只是在相应md文件头部定义的永久链接（不是什么特殊编码）。另外，注意结尾是有斜杠的
           {
             text: '前端',
+            link: '/web/',
             items: [
               { text: 'JavaScript', link: '/pages/8143cc480faf9a11/' },
               { text: 'TypeScript', link: '/pages/51afd6/', },
             ],
           },
-            {
-                text: '页面',
-                link: '/ui/',
-                items: [
-                    { text: 'HTML', link: '/pages/8309a5b876fc95e3/' },
-                    { text: 'CSS', link: '/pages/0a83b083bdf257cb/' },
-                ],
-            },
-            {
-                text: '笔记',
-                link: '/note/',
-                items: [
-                    { text: '《JavaScript教程》', link: '/note/javascript/' },
-                    { text: '《JavaScript高级程序设计》', link: '/note/js/' },
-                    { text: '《Git》', link: '/note/git/', },
-                    { text: '小程序笔记', link: '/note/wx-miniprogram/', },
-                ],
-            },
-            {
-                text: '技术',
-                link: '/technology/',
-                items: [
-                    { text: '技术文档', link: '/pages/9a7ee40fc232253e/' },
-                    { text: 'GitHub技巧', link: '/pages/4c778760be26d8b3/' },
-                    { text: '博客搭建', link: '/pages/41f87d890d0a02af/' },
-                ],
-            },
+          {
+              text: '页面',
+              link: '/ui/',
+              items: [
+                  { text: 'HTML', link: '/pages/8309a5b876fc95e3/' },
+                  { text: 'CSS', link: '/pages/0a83b083bdf257cb/' },
+              ],
+          },
+          {
+              text: '编程',
+              link: '/code/',
+              items: [
+                  { text: 'Python', link: '/pages/6a18d2/' },
+                  { text: 'Shell', link: '/pages/f955bf/' },
+                  { text: '小程序笔记', link: '/code/wx-miniprogram/', },
+              ],
+          },
+          {
+              text: '笔记',
+              link: '/note/',
+              items: [
+                  { text: '《JavaScript教程》', link: '/note/javascript/' },
+                  { text: '《JavaScript高级程序设计》', link: '/note/js/' },
+                  { text: '《Git》', link: '/note/git/', },
+              ],
+          },            
+        ],
+      },
+      {
+        text: '技术',
+        link: '/technology/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
+        items: [
+            { text: '技术文档', link: '/pages/9a7ee40fc232253e' },
+            { text: 'Linux',   link: '/pages/aaa17a/' },
+            { text: 'Docker',  link: '/pages/3c8281/' },
+            { text: 'GitHub',  link: '/pages/4c778760be26d8b3/' },
+            { text: '博客搭建', link: '/pages/41f87d890d0a02af/' },
         ],
       },
       {
@@ -116,7 +127,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/img/logo.png', // 导航栏logo
-    repo: 'daotoyi/site', // 导航栏右侧生成Github链接
+    // repo: 'daotoyi/site', // 导航栏右侧生成Github链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
     docsDir: 'docs', // 编辑的文件夹
@@ -200,7 +211,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     footer: {
       createYear: 2021, // 博客创建年份
       copyrightInfo:
-        'Daotoyi | <a href="https://github.com/daotoyi/site/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息，支持a标签或换行标签</br>
+        'Daotoyi | <a href="https://github.com/daotoyi/site/blob/main/LICENSE" target="_blank">MIT License</a>', // 博客版权信息，支持a标签或换行标签</br>
     },
 
     // 自定义hmtl(广告)模块

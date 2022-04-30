@@ -16,6 +16,10 @@ features: # 可选的
     details: 系统性梳理投资知识及体系
     link: /invest/
     imgUrl: /img/invest.png
+  # - title: 编程
+  #   details: 效用编程工具
+  #   link: /code/
+  #   imgUrl: /img/code.png
   - title: 技术
     details: 技术文档、教程、技巧、总结等
     link: /technology/
