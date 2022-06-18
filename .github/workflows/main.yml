@@ -53,20 +53,20 @@ jobs:
   # jobPushBaidu:
   #   needs: jobDeploy
 
-      - name: Sync to Gitee
-        uses: wearerequired/git-mirror-action@master
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
-        with:
-          source-repo: git@github.com:daotoyi/daotoyi.github.io.git
-          destination-repo: git@gitee.com:daotoyi/daotoyi.git
+      # - name: Sync to Gitee
+      #   uses: wearerequired/git-mirror-action@master
+      #   env:
+      #     SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+      #   with:
+      #     source-repo: git@github.com:daotoyi/daotoyi.github.io.git
+      #     destination-repo: git@gitee.com:daotoyi/daotoyi.git
 
-      - name: Deploy Gitee Pages
-        uses: yanglbme/gitee-pages-action@main
-        with:
+      # - name: Deploy Gitee Pages
+      #   uses: yanglbme/gitee-pages-action@main
+      #   with:
 
-          gitee-username: daotoyi
+      #     gitee-username: daotoyi
 
-          gitee-password: ${{ secrets.GITEE_PASSWORD }}
-          gitee-repo: daotoyi/daotoyi
-          branch: main
+      #     gitee-password: ${{ secrets.GITEE_PASSWORD }}
+      #     gitee-repo: daotoyi/daotoyi
+      #     branch: main
