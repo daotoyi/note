@@ -1,6 +1,5 @@
 name: CI - Deploy GitHub Pages
 
-# 在main分支发生push事件时触发。
 on: 
   push:
     branches:
@@ -8,7 +7,7 @@ on:
 
 jobs: 
   build:
-    runs-on: ubuntu-latest #运行在虚拟机环境ubuntu-latest
+    runs-on: ubuntu-latest 
 
   # jobDeploy: # job1      
 
@@ -31,16 +30,42 @@ jobs:
       - name: Generate static file
         run: npm install --no-fund && npm audit fix && npm run build
       
-      - name: Deploy on Github
+      - name: Deploy on Github/site
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           REPOSITORY_NAME: daotoyi/site
-          BRANCH: gh-pages # 部署到 gh-pages 分支
+          BRANCH: gh-pages 
           FOLDER: docs/.vuepress/dist 
+
+      - name: Deploy on Github/daotoyi
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          REPOSITORY_NAME: daotoyi/daotoyi.github.io
+          BRANCH: main
+          FOLDER: docs/.vuepress/dist
 
       - name: Push Baidu Links
         run: npm run baiduPush #（注意，运行目录是仓库根目录）
 
   # jobPushBaidu:
   #   needs: jobDeploy
+
+      - name: Sync to Gitee
+        uses: wearerequired/git-mirror-action@master
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+        with:
+          source-repo: git@github.com:daotoyi/daotoyi.github.io.git
+          destination-repo: git@gitee.com:daotoyi/daotoyi.git
+
+      - name: Deploy Gitee Pages
+        uses: yanglbme/gitee-pages-action@main
+        with:
+
+          gitee-username: daotoyi
+
+          gitee-password: ${{ secrets.GITEE_PASSWORD }}
+          gitee-repo: daotoyi/daotoyi
+          branch: main
