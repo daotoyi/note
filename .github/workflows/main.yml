@@ -70,3 +70,16 @@ jobs:
       #     gitee-password: ${{ secrets.GITEE_PASSWORD }}
       #     gitee-repo: daotoyi/daotoyi
       #     branch: main
+
+      # Deploy on server
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@4.1
+        with:
+        # rsync parameter:: switches: -avzh --delete --exclude="" --include="" --filter=""
+          switches: -avzh
+          path: docs/.vuepress/dist
+          remote_path: /root/dyDocker/html/daotoyi
+          remote_host: daotoyi.tk
+          remote_port: 22
+          remote_user: root
+          remote_key: ${{ secrets.MY_VPS_RSA_PRIVATE_KEY }}
