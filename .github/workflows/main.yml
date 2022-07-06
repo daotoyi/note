@@ -72,7 +72,7 @@ jobs:
       #     branch: main
 
       # Deploy on server
-      - name: rsync deployments
+      - name: Rsync deployments on VPS
         uses: burnett01/rsync-deployments@4.1
         with:
         # rsync parameter:: switches: -avzh --delete --exclude="" --include="" --filter=""
