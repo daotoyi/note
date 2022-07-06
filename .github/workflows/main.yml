@@ -73,13 +73,13 @@ jobs:
 
       # Deploy on server
       - name: Rsync deployments on VPS
-        uses: burnett01/rsync-deployments@4.1
+        uses: burnett01/rsync-deployments@5.2
         with:
         # rsync parameter:: switches: -avzh --delete --exclude="" --include="" --filter=""
           switches: -avzh
           path: docs/.vuepress/dist
           remote_path: /root/dyDocker/html/daotoyi
-          remote_host: 66.152.179.47 # daotoyi.t not access.
+          remote_host: daotoyi.t # 66.152.179.47 # not access.
           remote_port: 22
           remote_user: root
           remote_key: ${{ secrets.MY_VPS_RSA_PRIVATE_KEY }}
