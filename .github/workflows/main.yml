@@ -29,7 +29,7 @@ jobs:
 
       - name: Generate static file
         # run: npm install --no-fund && npm audit fix && npm run build
-        run: npm install && npm install -g vuepress && npm run build
+        run: export NODE_OPTIONS=--openssl-legacy-provider && npm install && npm install -g vuepress && sudo apt install yarn && yarn run build #npm run build
         # run: sudo apt install yarn && yarn run build
       
       - name: Deploy on Github/site
