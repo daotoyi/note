@@ -29,9 +29,8 @@ jobs:
 
       - name: Generate static file
         # run: npm install --no-fund && npm audit fix && npm run build
-        run: npm install && npm install -g vuepress
-        # run: npm run build
-        run: sudo apt install yarn && yarn run build
+        run: npm install && npm install -g vuepress && npm run build
+        # run: sudo apt install yarn && yarn run build
       
       - name: Deploy on Github/site
         uses: JamesIves/github-pages-deploy-action@releases/v3
