@@ -30,7 +30,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           text: '阅读',
           link: '/read/',
           items: [
+              { text: '历史文明', link: '/' },
               { text: '自我管理', link: '/pages/9931f7/' },
+              { text: '经济金融', link: '/pages/dc14ax/' },
+              { text: '未来科技', link: '/pages/3e6677/' },
               { text: '李笑来', link: '/pages/3cfee2/' },
           ],
       },
@@ -38,12 +41,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         text: '投资',
         link: '/invest/',
         items: [
-            { text: '股票', link: '/' },
-            { text: '期货', link: '/' },
+            { text: '股票', link: '/pages/a7918d/' },
+            { text: '期货', link: '/pages/0234db/' },
             { text: '期权', link: '/pages/16f920/' },
-            { text: '量化', link: '/' },
+            { text: '外盘', link: '/pages/2badd9/' },
+            { text: '量化', link: '/pages/33546b/' },
             { text: '区块', link: '/pages/832bd7/' },
-            { text: '认知', link: '/pages/660ab0/' },
+            { text: '认知', link: '/pages/1cc3b0/' },
+            { text: '数理', link: '/pages/a5850e/' },
             { text: '收藏', link: '/pages/02697b/' },
         ],
       },
@@ -72,18 +77,20 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
               text: '编程',
               link: '/code/',
               items: [
+                  { text: 'C++', link: '/pages/aacfb9/' },
                   { text: 'Python', link: '/pages/6a18d2/' },
                   { text: 'Shell', link: '/pages/f955bf/' },
-                  { text: '小程序笔记', link: '/code/wx-miniprogram/', },
+                  { text: '小程序开发', link: '/code/wx-miniprogram/'},
+                  
               ],
           },
           {
               text: '笔记',
               link: '/note/',
               items: [
+                  { text: '《Git》', link: '/note/git/'},
                   { text: '《JavaScript教程》', link: '/note/javascript/' },
                   { text: '《JavaScript高级程序设计》', link: '/note/js/' },
-                  { text: '《Git》', link: '/note/git/', },
               ],
           },            
         ],
@@ -97,6 +104,15 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
             { text: 'Docker',  link: '/pages/3c8281/' },
             { text: 'GitHub',  link: '/pages/4c778760be26d8b3/' },
             { text: '博客搭建', link: '/pages/41f87d890d0a02af/' },
+            { text: '效用工具', link: '/pages/9793cf/' },
+        ],
+      },
+      {
+        text: '周易',
+        link: '/yi/', 
+        items: [
+            { text: '周易基础', link: '/pages/42452f' },
+            { text: '奇门遁甲', link: '/pages/3f7e93/' },            
         ],
       },
       {
